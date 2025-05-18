@@ -1,11 +1,14 @@
 import asyncio
+import os
+from pathlib import Path
 
 from colorama import Fore, init
 from pytubefix import YouTube
 
 init()
 
-path_to_download_directory = "PATH"
+download_dir = Path(os.getenv("DOWNLOAD_PATH", "downloads"))
+download_dir.mkdir(exist_ok=True)
 
 async def service_video(url: str):
     try:
@@ -30,7 +33,7 @@ async def service_video(url: str):
 async def download_audio(url):
     try:
         yt_link = YouTube(url)
-        yt_link.streams.get_audio_only().download(path_to_download_directory)
+        yt_link.streams.get_audio_only().download(str(download_dir), filename_prefix="[AUDIO]")
         print(f"{Fore.GREEN}[SUCCESS]{Fore.RESET} Audio from {yt_link.title} downloaded")
     except Exception as e:
         print(f"{Fore.RED}[ERROR]{Fore.RESET} {e}")
@@ -39,7 +42,7 @@ async def download_audio(url):
 async def download_video(url):
     try:
         yt_link = YouTube(url)
-        yt_link.streams.get_highest_resolution().download(path_to_download_directory)
+        yt_link.streams.get_highest_resolution().download(str(download_dir), filename_prefix="[VIDEO]")
         print(f"{Fore.GREEN}[SUCCESS]{Fore.RESET} Video {yt_link.title} downloaded")
     except Exception as e:
         print(f"{Fore.RED}[ERROR]{Fore.RESET} {e}")
@@ -57,4 +60,7 @@ async def main():
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
