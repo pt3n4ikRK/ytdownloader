@@ -5,6 +5,7 @@ from pytubefix import YouTube
 
 init()
 
+path_to_download_directory = "PATH"
 
 async def service_video(url: str):
     try:
@@ -29,7 +30,7 @@ async def service_video(url: str):
 async def download_audio(url):
     try:
         yt_link = YouTube(url)
-        yt_link.streams.get_audio_only().download("C:\\Users\\SIGMA\\Downloads")
+        yt_link.streams.get_audio_only().download(path_to_download_directory)
         print(f"{Fore.GREEN}[SUCCESS]{Fore.RESET} Audio from {yt_link.title} downloaded")
     except Exception as e:
         print(f"{Fore.RED}[ERROR]{Fore.RESET} {e}")
@@ -38,7 +39,7 @@ async def download_audio(url):
 async def download_video(url):
     try:
         yt_link = YouTube(url)
-        yt_link.streams.get_highest_resolution().download("C:\\Users\\SIGMA\\Downloads")
+        yt_link.streams.get_highest_resolution().download(path_to_download_directory)
         print(f"{Fore.GREEN}[SUCCESS]{Fore.RESET} Video {yt_link.title} downloaded")
     except Exception as e:
         print(f"{Fore.RED}[ERROR]{Fore.RESET} {e}")
@@ -48,7 +49,7 @@ async def main():
     while True:
         try:
             url = input("Link on video (or exit): ")
-            if url == "exit":
+            if url.lower() == "exit":
                 break
             await service_video(url)
         except Exception as e:
