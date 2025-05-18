@@ -2,7 +2,6 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/badge/downloads-100%2Fmonth-brightgreen)](https://pypi.org/project/yt-async-downloader/)
 
 Асинхронный загрузчик видео и аудио с YouTube с цветным интерфейсом и интерактивным меню.
 
