@@ -18,8 +18,8 @@ async def start_page():
     while True:
         try:
             url = input("Select some from this list:\n"
-                        "1: Start\n"
-                        "")
+                        "1: Youtube\n"
+                        "Input a number: ")
             if url.lower() == "1":
                 await main()
             elif url.lower() == "exit":
