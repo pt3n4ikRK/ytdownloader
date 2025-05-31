@@ -27,10 +27,12 @@ Asynchronous video and audio downloader from YouTube with a colorful interface a
 ```bash
 python --version
 ```
-2. Install the package if you want to use it in other projects::
+2. Install the package if you want to use it in other projects:
 ```bash
 pip install git+https://github.com/pt3n4ikRK/ytdownloader.git
 ```
+
+3. If you have Python, run start.bat, which will install dependencies directly from requirements.txt.
 
 ## 🛠 For development:
 ````bash
