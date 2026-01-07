@@ -3,41 +3,37 @@
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Асинхронный загрузчик видео и аудио с YouTube с цветным интерфейсом и интерактивным меню.
+Asynchronous video and audio downloader from YouTube with a colorful interface and interactive menu.
 
-## ✨ Особенности
+## ✨ Features
 
-- ⚡ Асинхронная загрузка (не блокирует систему)
-- 🎨 Цветной интерфейс с помощью Colorama
-- 🎵 Отдельное скачивание аудио (mp3)
-- 🎥 Отдельное скачивание видео (mp4, 8k)
-- 📁 Автоматическое создание папки для загрузок
-- 🛠 Обработка ошибок подключения
+- ⚡ Asynchronous downloading (does not block the system)
+- 🎨 Color interface using Colorama
+- 🎵 Separate audio download (mp3)
+- 🎥 Separate video download (mp4, 8k)
+- 📁 Automatic creation of a download folder
+- 🛠 Connection error handling
 
-## ⚠️ Ограничения
+## ⚠️ Limitations
 
-- Максимальное качество видео: 8k (4320p)
-- Поддержка только публичных видео (без age-restricted)
-- Требуется стабильное интернет-соединение
+- Maximum video quality: 8k (4320p)
+- Supports only public videos (no age-restricted content)
+- Requires a stable internet connection
 
-## ⚙️ Установка
+## ⚙️ Installation
 
-1. Убедитесь, что у вас установлен Python 3.7+:
+1. Make sure you have Python 3.7+ installed:
+
 
 ```bash
 python --version
 ```
 
-2. Установите пакет:
-
-```bash
-pip install git+https://github.com/pt3n4ikRK/ytdownloader.git
-```
-
-## 🛠 Для разработки:
-
 ````bash
 git clone https://github.com/pt3n4ikRK/ytdownloader.git
 cd ytdownloader
-pip install -e .
+pip install -r requirements.txt
+python main.py
 ````
+
+or click on ````start.bat````
